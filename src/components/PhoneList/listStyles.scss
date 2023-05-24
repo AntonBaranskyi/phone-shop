@@ -1,0 +1,64 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 45px;
+  max-width: 900px;
+
+  margin-bottom: 25px;
+
+  &-item {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Білий фон */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тінь */
+    border-radius: 4px; /* Закруглені кути */
+    padding: 20px; /* Простір відступу в середині таблички */
+    padding-bottom: 65px;
+
+    img {
+      height: 150px;
+      width: 150px;
+      object-fit: contain; /* Зберігає пропорції та займає весь простір */
+      /* Закруглені кути для картинки */
+      margin-bottom: 10px; /* Відступ знизу від картинки */
+    }
+
+    div:first-child {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 5px; /* Відступ знизу від першого div */
+    }
+
+    div:last-child {
+      color: #888; /* Колір для ціни */
+    }
+
+    button {
+      position: absolute;
+      bottom: 15px;
+      margin-top: 10px; /* Відступ зверху від кнопки */
+      padding: 8px 16px; /* Внутрішні відступи кнопки */
+      background-color: #4caf50; /* Колір фону кнопки */
+      color: #fff; /* Колір тексту кнопки */
+      border: none; /* Відсутність границі */
+      border-radius: 4px; /* Закруглені кути кнопки */
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049; /* Колір фону кнопки при наведенні */
+    }
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
