@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchPhones = createAsyncThunk("phones/getAll", async () => {
+export const fetchPhones = createAsyncThunk("phones/getAll", async (params = '') => {
   const { data } = await axios.get(
-    "https://646e116a9c677e23218b00a8.mockapi.io/Phone_resource"
+    `https://646e116a9c677e23218b00a8.mockapi.io/Phone_resource?id=${params}`
   );
   return await data;
 });

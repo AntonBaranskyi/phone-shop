@@ -1,16 +1,14 @@
 import React from "react";
 import "./header.scss";
-import logo from "../../assets/phone-logo.svg";
-import basket from "../../assets/basket.svg";
-
+import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className="header">
       <div>
-        <a href="#">
+        <Link to="/">
           <span className="logo">Phone</span>
           <span className="text">Shop</span>
-        </a>
+        </Link>
       </div>
       <div className="header-info">
         <button className="cart-button">Корзина</button>
