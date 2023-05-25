@@ -1,0 +1,11 @@
+button {
+  background-color: #4caf50; /* Зелений колір фону */
+  color: white; /* Білий колір тексту */
+  border: none; /* Відсутність границі */
+  padding: 10px 20px; /* Відступи внутрішнього вмісту */
+  font-size: 16px; /* Розмір шрифту */
+  cursor: pointer; /* Курсор вказує на можливість натискання */
+}
+button:hover {
+  background-color: #45a049; /* Темніший зелений колір фону */
+}

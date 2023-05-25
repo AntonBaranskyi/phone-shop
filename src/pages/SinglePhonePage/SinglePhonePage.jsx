@@ -2,8 +2,9 @@ import React from "react";
 import SinglePhoneInfo from "../../components/SinglePhoneInfo";
 import SinglePhoneDescr from "../../components/SinglePhoneDescr";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { fetchPhones } from "../../redux/slices/phonesSlice";
+import "./style.scss";
 
 export default function SinglePhonePage() {
   const { phones, status } = useSelector((state) => state.phones);
@@ -12,7 +13,7 @@ export default function SinglePhonePage() {
 
   React.useEffect(() => {
     dispatch(fetchPhones(id));
-  }, [id]);
+  }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (status === "loading") {
     return "loading";
@@ -29,6 +30,17 @@ export default function SinglePhonePage() {
         stars={stars}
       />
       <SinglePhoneDescr name={name} RAM={RAM} memory={memory} camera={camera} />
+
+      <Link
+        to="/"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          textDecoration: "none",
+        }}
+      >
+        <button>Повернутися на головну</button>
+      </Link>
     </>
   );
 }

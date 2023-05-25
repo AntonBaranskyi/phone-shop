@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "../components/Search";
 import PhoneList from "../components/PhoneList";
+import Footer from "../components/Footer";
 
 export const SearchContext = React.createContext({
   searchValue: "",
@@ -13,6 +14,7 @@ export default function HomePage() {
     <SearchContext.Provider value={{ searchValue, setSearchValue }}>
       <Search />
       <PhoneList />
+      <Footer />
     </SearchContext.Provider>
   );
 }
