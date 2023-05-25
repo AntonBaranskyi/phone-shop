@@ -2,11 +2,10 @@ import React from "react";
 import Header from "../components/Header";
 import "./style_basket.scss";
 import BasketItem from "../components/BasketItem";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import uniqid from "uniqid";
 
 export default function BasketPage() {
-  const dispatch = useDispatch();
   const { items, totalPrice } = useSelector((state) => state.basket);
 
   if (items.length === 0) {
