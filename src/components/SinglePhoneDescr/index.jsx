@@ -6,7 +6,7 @@ export default function SinglePhoneDescr({ name, RAM, memory, camera }) {
     <div>
       <h4>Характеристики:</h4>
       <div className="descr">
-        <ul>
+        <ul className="list">
           <li>Назва : {name}</li>
           <li>Оперативна пам'ять : {RAM}</li>
           <li>Пам'ять: {memory}</li>

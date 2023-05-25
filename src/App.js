@@ -1,5 +1,6 @@
 import React from "react";
 import HomePage from "./pages/HomePage";
+import BasketPage from "./pages/BasketPage";
 import SinglePhonePage from "./pages/SinglePhonePage/SinglePhonePage";
 import { Routes, Route } from "react-router-dom";
 import GoogleAuth from "./components/GoogleAuth";
@@ -21,6 +22,7 @@ function App() {
         <Route element={<HomePage />} path="/" />
         <Route element={<SinglePhonePage />} path="/phone/:id" />
         <Route element={<GoogleAuth />} path="/login" />
+        <Route element={<BasketPage />} path="/basket" />
       </Routes>
     </div>
   );

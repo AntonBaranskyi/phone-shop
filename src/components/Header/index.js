@@ -7,6 +7,7 @@ import { logout } from "../../redux/slices/authSlice";
 export default function Header() {
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => state.auth);
+  const { totalCount } = useSelector((state) => state.basket);
   console.log(auth);
 
   return (
@@ -18,8 +19,11 @@ export default function Header() {
         </Link>
       </div>
       <div className="header-info">
-        <button className="cart-button">Корзина</button>
-
+        <Link to="/basket">
+          <button className="cart-button">
+            Корзина <span className="basketSpan">{totalCount}</span>
+          </button>
+        </Link>
         {auth ? (
           <Link to="/">
             <button onClick={() => dispatch(logout())} className="login-button">
