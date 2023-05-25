@@ -1,7 +1,14 @@
 import React from "react";
 import "./header.scss";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../redux/slices/authSlice";
+
 export default function Header() {
+  const dispatch = useDispatch();
+  const { auth } = useSelector((state) => state.auth);
+  console.log(auth);
+
   return (
     <header className="header">
       <div>
@@ -12,8 +19,26 @@ export default function Header() {
       </div>
       <div className="header-info">
         <button className="cart-button">Корзина</button>
-        <button className="login-button">Увійти</button>
-        <img className="account-photo" src={""} alt="Фото акаунта" />
+
+        {auth ? (
+          <Link to="/">
+            <button onClick={() => dispatch(logout())} className="login-button">
+              Вийти
+            </button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <button className="login-button"> Увійти</button>
+          </Link>
+        )}
+
+        {auth && (
+          <img
+            className="account-photo"
+            src={auth.picture}
+            alt="Фото акаунта"
+          />
+        )}
       </div>
     </header>
   );

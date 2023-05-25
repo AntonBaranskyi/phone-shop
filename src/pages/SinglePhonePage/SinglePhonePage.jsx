@@ -1,5 +1,6 @@
 import React from "react";
 import SinglePhoneInfo from "../../components/SinglePhoneInfo";
+import Header from "../../components/Header";
 import SinglePhoneDescr from "../../components/SinglePhoneDescr";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
@@ -23,6 +24,7 @@ export default function SinglePhonePage() {
   console.log(name);
   return (
     <>
+      <Header />
       <SinglePhoneInfo
         imageUrl={imageUrl}
         name={name}
