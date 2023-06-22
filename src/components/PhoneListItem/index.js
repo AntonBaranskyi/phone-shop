@@ -7,7 +7,7 @@ export default function ListItem(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { name, imageUrl, price, id } = props;
-  const onAddPhoneBasket = () => {
+ const onAddPhoneBasket = () => {
     const phoneItem = {
       name,
       imageUrl,

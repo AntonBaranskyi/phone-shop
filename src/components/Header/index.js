@@ -12,37 +12,42 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div>
-        <Link to="/">
-          <span className="logo">Phone</span>
-          <span className="text">Shop</span>
-        </Link>
-      </div>
-      <div className="header-info">
-        <Link to="/basket">
-          <button className="cart-button">
-            Корзина <span className="basketSpan">{totalCount}</span>
-          </button>
-        </Link>
-        {auth ? (
+      <div className="container">
+        <div>
           <Link to="/">
-            <button onClick={() => dispatch(logout())} className="login-button">
-              Вийти
+            <span className="logo">Phone</span>
+            <span className="text">Shop</span>
+          </Link>
+        </div>
+        <div className="header-info">
+          <Link to="/basket">
+            <button className="cart-button">
+              Корзина <span className="basketSpan">{totalCount}</span>
             </button>
           </Link>
-        ) : (
-          <Link to="/login">
-            <button className="login-button"> Увійти</button>
-          </Link>
-        )}
+          {auth ? (
+            <Link to="/">
+              <button
+                onClick={() => dispatch(logout())}
+                className="login-button"
+              >
+                Вийти
+              </button>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="login-button"> Увійти</button>
+            </Link>
+          )}
 
-        {auth && (
-          <img
-            className="account-photo"
-            src={auth.picture}
-            alt="Фото акаунта"
-          />
-        )}
+          {auth && (
+            <img
+              className="account-photo"
+              src={auth.picture}
+              alt="Фото акаунта"
+            />
+          )}
+        </div>
       </div>
     </header>
   );

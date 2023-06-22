@@ -2,11 +2,23 @@ div.single-wrapper {
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
+
+  flex-wrap: wrap;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    
+  }
   img {
     display: block;
     max-width: 200px;
     margin-left: 20px;
     width: 33%;
+
+    @media (max-width: 700px) {
+      justify-content: center;
+      
+    }
   }
 
   .star-wrapper {

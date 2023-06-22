@@ -25,24 +25,32 @@ export default function SinglePhonePage() {
   return (
     <>
       <Header />
-      <SinglePhoneInfo
-        imageUrl={imageUrl}
-        name={name}
-        price={price}
-        stars={stars}
-      />
-      <SinglePhoneDescr name={name} RAM={RAM} memory={memory} camera={camera} />
+      <div className="container-single">
+        <SinglePhoneInfo
+          imageUrl={imageUrl}
+          name={name}
+          price={price}
+          stars={stars}
+          id={id}
+        />
+        <SinglePhoneDescr
+          name={name}
+          RAM={RAM}
+          memory={memory}
+          camera={camera}
+        />
 
-      <Link
-        to="/"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          textDecoration: "none",
-        }}
-      >
-        <button>Повернутися на головну</button>
-      </Link>
+        <Link
+          to="/"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            textDecoration: "none",
+          }}
+        >
+          <button style={{marginBottom:'40px'}}>Повернутися на головну</button>
+        </Link>
+      </div>
     </>
   );
 }
